@@ -18,8 +18,8 @@ jobs:
       - name: Run self-check (progress meter, not pass/fail)
         id: selfcheck
         run: |
-          python3 self_check.py | tee check_output.txt
-          echo "score=$(tail -1 check_output.txt)" >> $GITHUB_OUTPUT
+          python3 self_check.py | tee "$HOME/check_output.txt"
+          echo "score=$(tail -1 "$HOME/check_output.txt")" >> $GITHUB_OUTPUT
         continue-on-error: true
 
       - name: Summary
