@@ -82,3 +82,68 @@ plt.savefig("chart.png")
 Trade papers with your partner. Using the key I project, mark each answer and write the score at the top. **Both names go on the paper you graded.**
 
 ---
+
+## PART 3 — CORRECTIONS (20 min)
+
+Take your own paper back. Correct every miss **in a different color**, and for each miss write one line:
+
+**What I had in my head** vs **what is true**
+
+*Example:*
+- What I had in my head: "legend() just shows the colors automatically."
+- What is true: `legend()` only shows entries that were given a `label=` when plotted.
+
+**Why this format:** Naming the misconception explicitly helps you not repeat it. "I forgot" doesn't teach you — "I thought X but actually Y" does.
+
+---
+
+## PART 4 — WHAT THE CHECK TELLS US (10 min, class discussion)
+
+Hands up by section: which section was hardest? We re-teach the top one on the board before the U2 L07 lab, using *your actual wrong answers* — that is what the check is for.
+
+**Common patterns from past years:**
+- `savefig` after `show` → blank file
+- `legend()` without `label=` → empty legend
+- Missing y-label → chart is ambiguous
+
+---
+
+## PART 5 — LOOK AHEAD: THE U2 L07 LAB (15 min, in pairs)
+
+Next lesson (U2 L07) you get your own data-lab repo and build bar charts of categorical data. In your notes:
+
+**Q1.** What is a *categorical* column, versus a *numerical* one? Name one of each from the study-habits preview you saw in U2 L05 (students, study, scores, sleep).
+
+**Categorical:** labels/groups (e.g., `students` — "S01", "S02" are IDs, not quantities).
+**Numerical:** quantities you can do math on (e.g., `study` hours, `scores` points, `sleep` hours).
+
+**Q2.** Predict: which column from that preview would make the most useful bar chart, and which could a bar chart not show at all? Why?
+
+**Most useful bar chart:** `students` on x, `scores` on y — compares five students' scores directly.
+**Bar chart cannot show:** `study` vs `scores` as a relationship — that needs a scatter (both numeric). A bar chart with `study` on x would treat 2.0, 4.5, 6.5, 9.0, 12.0 as five *separate categories*, losing the fact that 9.0 > 6.5 > 4.5...
+
+---
+
+## TURN IN — PAPER (collected at the end of class)
+
+One check sheet with both names. Hand it in before you leave.
+
+**Also:** Submit a photo of the corrected check sheet to the U2 L06 assignment on Google Classroom by 23:59 tonight.
+
+**Keep the sheet** — it is your study guide for the Unit 2 assessment (U2 L19).
+
+---
+
+## WHY THIS MATTERS
+
+This check covers the *vocabulary of visualization*:
+
+`alpha`, `s`, `label`, `legend`, `savefig`, `show`, `figure`, `grid`
+
+Every lab from here on (U2 L07, U2 L08, U2 L10, U2 L13, and the Unit 2 project U2 L15–L18) assumes you have these fluent. If today revealed gaps, revisit U2 L03–L05 before U2 L07.
+
+---
+
+## NEXT
+
+**U2 L07 — LAB: Bar Charts and Categorical Data** [U2-L07-Lab-Bar-Charts-And-Categorical-Data.md](LESSONS/U2-L07-Lab-Bar-Charts-And-Categorical-Data.md)

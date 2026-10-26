@@ -130,3 +130,70 @@ plt.show()
 **Open all three PNGs.** Ask yourself: does each one *actually* give its audience what they need?
 
 ---
+
+## PART 3 — THE AUDIENCE CHECKLIST (15 min)
+
+For **your own chart** (pick the one you're most unsure about), answer this checklist in your notes:
+
+| Question | Your Answer |
+|----------|-------------|
+| 1. Who is the exact audience? | |
+| 2. What is the **one thing** they should notice? | |
+| 3. What jargon did you remove? | |
+| 4. What jargon did you keep, and why? | |
+| 5. Does the y-axis start at zero? (If bar chart) | |
+| 6. Is the legend inside the plot area, obscuring data? | |
+| 7. If you printed this in black & white, would it still work? | |
+| 8. What is the honest limitation you would tell them? | |
+
+**The honest limitation** is the sentence that tells your reader you understood your own data. For Version A: "Threshold is arbitrary — set by policy, not by data." For Version C: "This hides the 15 days below 99%."
+
+---
+
+## PART 4 — JOURNAL + PUSH (10 min)
+
+In your viz-basics repo:
+
+```bash
+cd ~/compmath-u2-viz-basics
+code journal-$(whoami).md
+```
+
+Answer in 3–4 sentences:
+- Which audience forced the biggest change in your chart, and why?
+- What is one design rule you will apply to **every** chart you make from now on?
+
+```bash
+git add audience_charts.py chart_*.png journal-$(whoami).md
+git commit -m "L14: three audience charts + reflection"
+git push
+```
+
+---
+
+## TURN IN — SCREENSHOT (due 23:59 tonight)
+
+One screenshot showing:
+
+```
+ls -lh chart_*.png
+git push
+```
+
+Submit the screenshot to the U2 L14 assignment on Google Classroom.
+
+---
+
+## WHY THIS MATTERS
+
+**A chart is not a picture of data — it is an argument for an audience.** The same data demands different charts for different people. The security team needs precision; the principal needs a trend; the parents need reassurance. If you show the security team's line plot to parents, you confuse them. If you show the traffic light to the security team, you insult them.
+
+This lesson is the bridge to the Unit 2 project (U2 L15–L18), where you will build three charts for three audiences *and defend every choice in writing*.
+
+---
+
+## NEXT
+
+**U2 L15 — Project Launch: Visualizing Threats** [U2-L15-Project-Launch-Visualizing-Threats.md](../compmath-u2-data-lab/LESSONS/U2-L15-Project-Launch-Visualizing-Threats.md)
+
+*(Note: U2 L15–L18 use the data-lab repo. Your project charts will live there, but the audience-design discipline from today applies directly.)*

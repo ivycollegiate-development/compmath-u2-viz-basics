@@ -47,3 +47,74 @@ For each sketch, write:
 4. One audience this chart is *for*
 
 ---
+
+## PART 3 — THE HONESTY AUDIT: YOUR PROJECT (20 min)
+
+Pull up your Unit 2 project (from the data-lab repo). In your notes, for **each of your three project charts**, answer:
+
+| Audit Question | Chart 1 (Timeline) | Chart 2 (Weekday/Weekend) | Chart 3 (Histogram) |
+|----------------|-------------------|---------------------------|---------------------|
+| Does the y-axis start at 0? (If bar) | | | N/A |
+| If y-axis ≠ 0, did I explain why in `analysis.md`? | | | |
+| What rows did cleaning drop, and would they change the story? | | | |
+| What data did I *choose not to plot* that a careful reader would ask about? | | | |
+| What is my "honest limitation" sentence? | | | |
+
+**The honesty audit is not a criticism — it is the discipline.** A chart without an honest limitation is a claim of completeness that no real dataset has.
+
+---
+
+## PART 4 — WHAT YOU STILL NEED (15 min, in pairs)
+
+With your partner, compare your Part 1 scores and Part 3 answers. Write two things in your notes:
+
+**My strongest U2 skill:** ________________________________________
+**My weakest U2 skill — I will re-watch L__ / re-read the lesson / practice this week:** ________________________________________
+
+Be specific: "I need to practice `plt.legend()` positioning" is better than "charts."
+
+---
+
+## PART 5 — JOURNAL + PUSH (last 10 min)
+
+In your viz-basics repo:
+
+```bash
+cd ~/compmath-u2-viz-basics
+code journal-$(whoami).md
+```
+
+Answer in 4–5 sentences:
+- What is the one idea from Unit 2 that you will use in *any* future data work, even if you never touch matplotlib again?
+- What is the difference between a chart that is *unclear* and one that is *dishonest*?
+
+```bash
+git add journal-$(whoami).md
+git commit -m "L19: unit 2 wrap reflection"
+git push
+```
+
+---
+
+## TURN IN — PAPER + SCREENSHOT (due 23:59 tonight)
+
+- Hand in the paper check sheet (both names on it).
+- Submit a photo of the completed check sheet + a screenshot of `git push` to the U2 L19 assignment on Google Classroom.
+
+**Keep the terminal open** — spot-checks happen.
+
+---
+
+## WHY THIS MATTERS
+
+**Unit 2 taught you a vocabulary, not just tools.** The words — provenance, cleaning audit, chart-type matching, audience checklist, honesty audit — are the concepts you carry into Unit 3 (Data Modeling), AP Cybersecurity (threat visualization), and any data-adjacent role.
+
+**The vocabulary is fluency, not memorization.** If you can say "right-skewed" and see the long tail in your head, you own it. If you have to look it up, you don't — yet.
+
+**The project is your evidence.** The three charts in your data-lab repo, with their `analysis.md` honest limitations, are the portfolio piece that proves you can build an argument with evidence. Keep that repo clean; you will reference it in college applications and interviews.
+
+---
+
+## NEXT
+
+**Unit 3 — Data Modeling** (starts after the Unit 2 assessment week). We move from *describing* data to *modeling* it — regression, prediction, and the security lens on model trust.

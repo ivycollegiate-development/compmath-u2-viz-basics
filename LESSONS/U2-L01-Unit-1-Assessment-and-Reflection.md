@@ -34,3 +34,52 @@ The exam is a standalone paper:
 Do not deviate from the printed paper. The coversheet on the front carries your name, your confident item, and the "one thing I hope is NOT on the test" note from Part 1.
 
 ---
+
+## PART 3 — HAND BACK THE COMPUTERS: GRADE RELEASE WALKTHROUGH (10 min)
+
+We go over the answer key together, problem by problem. As we do:
+- Mark your own paper
+- For each miss, write one sentence: **what I thought** vs **what is true**
+
+These sentences are raw material for your journal in Part 4.
+
+---
+
+## PART 4 — JOURNAL (last 10 min)
+
+Open your lab repo and create today's journal:
+
+```bash
+cd ~/compmath-u1-calculator-lab
+code journal-$(whoami).md
+```
+
+Answer in the file, 3-5 sentences each:
+- What was the hardest section for you, and why?
+- What is one misconception you caught yourself having during the walkthrough?
+
+---
+
+## PART 5 — PUSH (last 5 min — same loop, now routine)
+
+```bash
+git add journal-$(whoami).md
+git commit -m "L01: Unit 1 assessment reflection"
+git push
+```
+
+---
+
+## TURN IN — PHOTO + SCREENSHOT (due 23:59 tonight)
+
+- Photo of your completed assessment paper (coversheet + all pages)
+- Screenshot of `git push`
+
+Submit both to this assignment on Google Classroom.
+Keep the terminal open — spot-checks.
+
+---
+
+## NEXT
+
+**U2 L02 — Bridge: From Numbers to Data** [U2-L02-Bridge-From-Numbers-To-Data.md](LESSONS/U2-L02-Bridge-From-Numbers-To-Data.md)

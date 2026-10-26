@@ -97,3 +97,109 @@ In your notes, then verify:
 - Why `plt.figure()` before the plot?
 
 ---
+
+## PART 4 — PLOT OUR REAL DATA: STUDY HOURS (15 min)
+
+Yesterday's dataset, today as a picture. Open your lab repo first:
+
+```bash
+cd ~/compmath-u2-data-lab
+git pull
+```
+
+Then replace the contents of `first_plot.py` with this real-data version, save, and run `python3 first_plot.py`:
+
+```python
+import csv
+import matplotlib.pyplot as plt
+
+with open("data/u2_dataset1_study_habits.csv", newline="") as f:
+    lines = [ln for ln in f if ln.strip() and not ln.startswith("#")]
+    reader = csv.DictReader(lines)
+    rows = list(reader)
+
+study = [float(r["Study_Hours"]) for r in rows]
+score = [float(r["Test_Score"]) for r in rows]
+
+plt.figure()
+plt.scatter(study, score, s=20, alpha=0.6, color="steelblue")
+plt.title("Study Hours vs Test Score — Positive Trend")
+plt.xlabel("Study Hours (hours per week)")
+plt.ylabel("Test Score (points)")
+plt.grid(True, alpha=0.3)
+plt.savefig("study_vs_score.png", dpi=150)
+plt.show()
+```
+
+In your notes:
+- Why `scatter` not `plot` here? (Both axes are numeric, but we want discrete points, not a connected line)
+- What does `alpha=0.6` do with 52 points?
+
+---
+
+## PART 5 — SAVEFIG: MAKE IT A TURN-IN (10 min)
+
+`plt.show()` puts a chart on a screen; `plt.savefig()` writes it to a file you can submit and keep:
+
+```python
+plt.savefig("my_chart.png", dpi=150, bbox_inches="tight")
+```
+
+(Run it *before* or instead of `show()` in a script — after the window closes, the figure is gone.)
+
+Back in the terminal, check it exists:
+
+```bash
+ls -lh my_chart.png
+```
+
+In your notes: what does `dpi=150` change, and why does a crisp image matter when someone else grades your chart?
+
+---
+
+## PART 6 — DISCUSSION: WHAT MAKES A CHART GOOD? (5 min)
+
+With your table, rank these sins from worst to least-worst and defend it:
+
+1. Missing y-label
+2. Truncated y-axis on a bar chart
+3. No title
+4. Wrong chart type (line plot for categories)
+5. Default colors on overlapping points
+
+One sentence each in your notes. In U2 L05 we judge a real news chart against exactly this list.
+
+---
+
+## PART 7 — SAVE YOUR WORK + PUSH (last 10 min)
+
+Put your script and image in your lab repo:
+
+```bash
+cd ~/compmath-u2-data-lab
+git add first_plot.py study_vs_score.png
+git commit -m "L03: first scatter plot with labels"
+git push
+```
+
+---
+
+## TURN IN — SCREENSHOT (due 23:59 tonight)
+
+One screenshot showing, in order:
+
+```
+ls -lh study_vs_score.png
+git push
+```
+
+Submit the screenshot to this assignment on Google Classroom.
+Keep the terminal open — spot-checks.
+
+**Early finishers:** add a second series to the scatter (Sleep_Hours vs Test_Score) in a different color with `label=` and `plt.legend()`, and save a second PNG.
+
+---
+
+## NEXT
+
+**U2 L04 — Review: From Data to Visualization** [U2-L04-Review-Data-To-Visualization.md](LESSONS/U2-L04-Review-Data-To-Visualization.md)
