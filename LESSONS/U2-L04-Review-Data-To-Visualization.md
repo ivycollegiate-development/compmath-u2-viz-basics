@@ -67,9 +67,10 @@ git pull
 
 You are rebuilding `first_plot.py` from memory — no copy-paste. Your L03 version is already committed in git, so nothing is lost when you overwrite it.
 
-Create the file, then open it:
+Delete the old version so you start from an empty file, then open it:
 
 ```bash
+rm -f first_plot.py
 touch first_plot.py
 code first_plot.py
 ```
