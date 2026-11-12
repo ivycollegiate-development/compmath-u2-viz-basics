@@ -50,9 +50,11 @@ git pull
 
 You should be inside `compmath-u2-data-lab`, where this unit's files live under `data/`. Every path from here on is relative to this folder.
 
-Create a new script `explore.py` in VS Code:
+Create `explore.py` with `touch`, then open it in VS Code:
 
 ```bash
+cd ~/compmath-u2-data-lab
+touch explore.py
 code explore.py
 ```
 
@@ -178,6 +180,14 @@ code journal-$(whoami).md
 Answer in 2-3 sentences each:
 - What surprised you about the comment-line trap?
 - Why does `csv.DictReader` give you strings, not numbers?
+
+Then commit your script and journal:
+
+```bash
+git add explore.py journal-$(whoami).md
+git commit -m "L02: reading a CSV with csv and DictReader"
+git push
+```
 
 ---
 

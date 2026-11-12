@@ -65,10 +65,18 @@ cd ~/compmath-u2-data-lab
 git pull
 ```
 
-Create a new file `first_plot.py` in VS Code and, from memory — no copy-paste — reconstruct the complete L03 Part 4 script into it. Save, then run:
+You are rebuilding `first_plot.py` from memory — no copy-paste. Your L03 version is already committed in git, so nothing is lost when you overwrite it.
+
+Create the file, then open it:
 
 ```bash
+touch first_plot.py
 code first_plot.py
+```
+
+Type the complete L03 Part 4 script from memory. Save the file, then run it:
+
+```bash
 python3 first_plot.py
 ```
 

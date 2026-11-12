@@ -8,13 +8,13 @@
 
 ## PART 1 — THE SAME DATA, THREE AUDIENCES (15 min)
 
-You have a cleaned dataset: 60 days of campus threat data. Here is a 3-row excerpt from `u2_campus_threat_clean.csv`:
+You have 60 days of campus threat data. It is already in this repo at `data/u2_campus_threat_daily.csv`. Here is a 3-row excerpt:
 
 ```
-date,phishing_reports,failed_logins,login_success_rate,malware_blocks,vpn_connections,wifi_devices
-2026-01-01,12,45,0.992,3,156,2041
-2026-01-02,8,38,0.994,2,142,1987
-2026-01-03,15,52,0.990,4,168,2103
+date,phishing_reports,failed_logins,phishing_clicks,login_success_rate
+2026-10-05,12,33,5,0.4
+2026-10-06,11,26,4,0.53
+2026-10-07,4,25,3,0.55
 ```
 
 Your task: **design one chart** that answers the same question — *"Are threat levels stable or rising?"* — for three different audiences:
@@ -41,15 +41,23 @@ cd ~/compmath-u2-viz-basics
 git pull
 ```
 
-Create `audience_charts.py` and build all three. You will need the clean threat data — it's in the data-lab repo, but copy it here or read from the path:
+Create `audience_charts.py`, then open it:
+
+```bash
+cd ~/compmath-u2-viz-basics
+touch audience_charts.py
+code audience_charts.py
+```
+
+The data is already in this repo's `data/` folder — the 60-day file the project uses. Start the file with this block:
 
 ```python
 import csv
 from datetime import datetime
 import matplotlib.pyplot as plt
 
-# Load from data-lab repo
-with open("../compmath-u2-data-lab/data/u2_campus_threat_clean.csv", newline="") as f:
+# Load the 60-day threat file from this repo's data/ folder
+with open("data/u2_campus_threat_daily.csv", newline="") as f:
     rows = list(csv.DictReader(f))
 
 dates = [datetime.strptime(r["date"], "%Y-%m-%d").date() for r in rows]
@@ -111,10 +119,11 @@ plt.show()
 avg_success = sum(success) / len(success) * 100  # percentage
 
 plt.figure(figsize=(4, 4))
-# Traffic light: green/yellow/red based on threshold
-if avg_success >= 99.5:
+# Traffic light: green/yellow/red based on a stated policy threshold
+# (70% and 55% are the school's thresholds, not this dataset's average)
+if avg_success >= 70:
     color, verdict = "seagreen", "Strong"
-elif avg_success >= 99.0:
+elif avg_success >= 55:
     color, verdict = "goldenrod", "Acceptable"
 else:
     color, verdict = "indianred", "Needs Attention"
@@ -127,7 +136,13 @@ plt.savefig("chart_parents.png", dpi=150)
 plt.show()
 ```
 
-**Open all three PNGs.** Ask yourself: does each one *actually* give its audience what they need?
+Save the file, run it, then open all three PNGs:
+
+```bash
+python3 audience_charts.py
+```
+
+Ask yourself: does each one *actually* give its audience what they need?
 
 ---
 
@@ -146,7 +161,7 @@ For **your own chart** (pick the one you're most unsure about), answer this chec
 | 7. If you printed this in black & white, would it still work? | |
 | 8. What is the honest limitation you would tell them? | |
 
-**The honest limitation** is the sentence that tells your reader you understood your own data. For Version A: "Threshold is arbitrary — set by policy, not by data." For Version C: "This hides the 15 days below 99%."
+**The honest limitation** is the sentence that tells your reader you understood your own data. For Version A: "Threshold is arbitrary — set by policy, not by data." For Version C: "This hides the 16 days below 50%."
 
 ---
 

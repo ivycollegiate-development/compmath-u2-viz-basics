@@ -18,20 +18,24 @@ pwd
 
 This tells you where you are. If the output does not end with your home directory (`/home/yourname` or `/Users/yourname`), you are not where you think you are — stop and ask.
 
-Then make a folder for today's work and open it in VS Code:
+Then go into your Unit 2 repo, make a folder for today's work, and create your script inside it:
 
 ```bash
+cd ~/compmath-u2-viz-basics
+git pull
 mkdir -p unit2_plots
 cd unit2_plots
-touch charts.py
-code .
+touch custom_plots.py
+code custom_plots.py
 ```
 
-**Why this sequence:** `cd ~` guarantees you start from home. `mkdir -p` creates the folder (the `-p` means "no error if it already exists"). `touch charts.py` creates an empty file so VS Code has something to open. `code .` opens the *folder* in VS Code, not just the file — this matters later when you have multiple files.
+**Why this sequence:** `cd ~/compmath-u2-viz-basics` puts you inside your repo — work saved anywhere else never gets pushed. `mkdir -p` creates the folder (the `-p` means "no error if it already exists"). `touch custom_plots.py` creates the empty file on disk. `code custom_plots.py` opens *that file* in VS Code.
 
-Everything today goes in `charts.py`. Run it after every part with `python3 charts.py` — you should watch your three charts appear and improve each time.
+Everything today goes in `custom_plots.py`. Run it after every part with `python3 custom_plots.py` — you should watch your three charts appear and improve each time.
 
-**Common mistake:** typing `python charts.py` (no `3`). On the VPS, `python` may point to Python 2, which will fail. Always use `python3`.
+(There is also a file called `charts.py` at your repo root. That one belongs to U2 L07, where you fix two bugs in it. Do not confuse it with `custom_plots.py`.)
+
+**Common mistake:** typing `python custom_plots.py` (no `3`). On the VPS, `python` may point to Python 2, which will fail. Always use `python3`.
 
 ---
 
@@ -237,7 +241,7 @@ S04,3.0,74,0.88,6.5
 S05,0.5,48,0.65,5.0
 ```
 
-In `charts.py`, build **one chart of your choice** from this data — your pick of line, bar, or scatter, your pick of columns, your pick of colors. It must have:
+In `custom_plots.py`, build **one chart of your choice** from this data — your pick of line, bar, or scatter, your pick of columns, your pick of colors. It must have:
 - `plt.figure()` at the start
 - Title that states the finding
 - x-label with units
@@ -257,10 +261,11 @@ In `charts.py`, build **one chart of your choice** from this data — your pick 
 
 ## PART 6 — TURN IN (15 min)
 
-Add today's work to the lab repo you already have (the one from Unit 1 — `~/compmath-u1-calculator-lab`). Copy your files in, then in the terminal:
+Add today's work to your Unit 2 repo. `unit2_plots/` is already inside it, so there is nothing to copy — go to the repo root and commit the folder:
 
 ```bash
-cd ~/compmath-u1-calculator-lab
+cd ~/compmath-u2-viz-basics
+git status
 git add unit2_plots/
 git commit -m "L05: three chart types + custom chart"
 git push

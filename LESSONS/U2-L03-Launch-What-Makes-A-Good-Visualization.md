@@ -25,15 +25,17 @@ Now picture it as a line climbing and dipping through the week. In your notes, b
 
 ## PART 2 — CODE-ALONG: YOUR FIRST PLOT (15 min)
 
-Open your workspace. First command, always:
+Open your lab repo. Your script lives in the repo — not in your home folder, where nothing gets committed:
 
 ```bash
-cd ~
+cd ~/compmath-u2-data-lab
+git pull
 ```
 
-Create a new script `first_plot.py` in VS Code and run it as you build it:
+Create `first_plot.py` with `touch`, then open it in VS Code:
 
 ```bash
+touch first_plot.py
 code first_plot.py
 ```
 
@@ -100,14 +102,7 @@ In your notes, then verify:
 
 ## PART 4 — PLOT OUR REAL DATA: STUDY HOURS (15 min)
 
-Yesterday's dataset, today as a picture. Open your lab repo first:
-
-```bash
-cd ~/compmath-u2-data-lab
-git pull
-```
-
-Then replace the contents of `first_plot.py` with this real-data version, save, and run `python3 first_plot.py`:
+Yesterday's dataset, today as a picture. You are already in `~/compmath-u2-data-lab` from Part 2, and `first_plot.py` already exists — so replace its contents with this real-data version, save, and run `python3 first_plot.py`:
 
 ```python
 import csv

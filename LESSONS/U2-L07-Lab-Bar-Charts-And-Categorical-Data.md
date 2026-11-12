@@ -129,7 +129,15 @@ If any test still fails:
 
 ## PART 4 — EXTENSION: YOUR OWN BAR CHART (20 min)
 
-Using the **same datasets** in `data/`, build **one additional bar chart** in a new file `my_bar_chart.py` that:
+Using the **same datasets** in `data/`, build **one additional bar chart** in a new file, `my_bar_chart.py`. Create it, then open it:
+
+```bash
+cd ~/compmath-u2-viz-basics
+touch my_bar_chart.py
+code my_bar_chart.py
+```
+
+`my_bar_chart.py` must:
 
 1. Loads data from one of the CSV files (your choice)
 2. Creates a bar chart with **semantic category order**
@@ -143,7 +151,11 @@ Using the **same datasets** in `data/`, build **one additional bar chart** in a 
 - `u2_dataset3_activities.csv`: Activity Type vs average Hours/Week
 - `u2_student_performance_data.csv`: Parent Education Level (categorical) vs Math Score
 
-**Before you submit, run your script and verify the PNG opens and looks correct.**
+**Before you submit, run the file you just wrote, then verify the PNG opens and looks correct:**
+
+```bash
+python3 my_bar_chart.py
+```
 
 ---
 

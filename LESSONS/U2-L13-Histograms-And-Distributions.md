@@ -17,9 +17,10 @@ git pull
 python3 clean_data.py
 ```
 
-Create a new script `histograms.py` in VS Code and run it as you build it:
+Create `histograms.py` in the repo you are already in, then open it in VS Code:
 
 ```bash
+touch histograms.py
 code histograms.py
 ```
 
