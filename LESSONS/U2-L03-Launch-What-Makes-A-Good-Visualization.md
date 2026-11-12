@@ -18,7 +18,7 @@ Now picture it as a line climbing and dipping through the week. In your notes, b
 
 **Key ideas to write down:**
 - A table requires reading; a chart requires *seeing*
-- The pattern (Monday low, Friday high) is instant in the picture
+- The pattern (low at the start of the week, high at the end) is instant in the picture
 - But a chart without labels is a guess — not evidence
 
 ---

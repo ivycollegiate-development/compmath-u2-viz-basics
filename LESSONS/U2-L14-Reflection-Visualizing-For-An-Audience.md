@@ -90,14 +90,17 @@ plt.show()
 from collections import defaultdict
 weekly_phish = defaultdict(int)
 weekly_failed = defaultdict(int)
+weekly_days = defaultdict(int)   # how many days of that week are in the data
 for d, p, f in zip(dates, phishing, failed):
     week = d.isocalendar()[1]  # ISO week number
     weekly_phish[week] += p
     weekly_failed[week] += f
+    weekly_days[week] += 1
 
 weeks = sorted(weekly_phish.keys())
-avg_phish = [weekly_phish[w] / 7 for w in weeks]
-avg_failed = [weekly_failed[w] / 7 for w in weeks]
+# Divide by the days actually present, not by 7: the first and last weeks are partial
+avg_phish = [weekly_phish[w] / weekly_days[w] for w in weeks]
+avg_failed = [weekly_failed[w] / weekly_days[w] for w in weeks]
 
 plt.figure(figsize=(8, 4))
 plt.bar([w - 0.2 for w in weeks], avg_phish, width=0.4, label="Avg Phishing/Day", color="steelblue")
@@ -119,7 +122,7 @@ plt.show()
 avg_success = sum(success) / len(success) * 100  # percentage
 
 plt.figure(figsize=(4, 4))
-# Traffic light: green/yellow/red against the school's policy thresholds
+# Traffic light: green/yellow/red against the thresholds this exercise sets
 if avg_success >= 99.5:
     color, verdict = "seagreen", "Strong"
 elif avg_success >= 99.0:
@@ -129,7 +132,7 @@ else:
 
 plt.pie([avg_success, 100 - avg_success], colors=[color, "lightgray"], startangle=90,
         wedgeprops={"edgecolor": "white", "linewidth": 2})
-plt.title(f"Login Security: {verdict}\n{avg_success:.1f}% Success Rate")
+plt.title(f"Login Security: {verdict}")
 plt.tight_layout()
 plt.savefig("chart_parents.png", dpi=150)
 plt.show()
@@ -208,6 +211,6 @@ This lesson is the bridge to the Unit 2 project (U2 L15–L18), where you will b
 
 ## NEXT
 
-**U2 L15 — Project Launch: Visualizing Threats** [U2-L15-Project-Launch-Visualizing-Threats.md](../compmath-u2-data-lab/LESSONS/U2-L15-Project-Launch-Visualizing-Threats.md)
+**U2 L15 — Project Launch: Visualizing Threats** [U2-L15-Project-Launch-Visualizing-Threats.md](https://github.com/ivycollegiate-development/compmath-u2-data-lab/blob/main/LESSONS/U2-L15-Project-Launch-Visualizing-Threats.md)
 
 *(Note: U2 L15–L18 use the data-lab repo. Your project charts will live there, but the audience-design discipline from today applies directly.)*

@@ -133,7 +133,7 @@ In your notes: what relationship (if any) do you see between Sleep_Hours and Tes
 
 ## PART 4 — PAPER CHECK PREVIEW (5 min)
 
-Tuesday (U2 L06) is a paper check on L03–L05 concepts. In your notes, write one question you would put on that check for each of these topics:
+U2 L06 is a paper check on L03–L05 concepts. In your notes, write one question you would put on that check for each of these topics:
 - Chart type choice (line vs bar vs scatter)
 - The label rule (title, x-label, y-label)
 - `savefig` vs `show` order
