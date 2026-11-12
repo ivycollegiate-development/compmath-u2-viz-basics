@@ -12,9 +12,9 @@ You have 60 days of campus threat data. It is already in this repo at `data/u2_c
 
 ```
 date,phishing_reports,failed_logins,phishing_clicks,login_success_rate
-2026-10-05,12,33,5,0.4
-2026-10-06,11,26,4,0.53
-2026-10-07,4,25,3,0.55
+2026-10-05,6,15,1,0.996
+2026-10-06,7,27,0,0.996
+2026-10-07,4,29,1,0.995
 ```
 
 Your task: **design one chart** that answers the same question — *"Are threat levels stable or rising?"* — for three different audiences:
@@ -119,11 +119,10 @@ plt.show()
 avg_success = sum(success) / len(success) * 100  # percentage
 
 plt.figure(figsize=(4, 4))
-# Traffic light: green/yellow/red based on a stated policy threshold
-# (70% and 55% are the school's thresholds, not this dataset's average)
-if avg_success >= 70:
+# Traffic light: green/yellow/red against the school's policy thresholds
+if avg_success >= 99.5:
     color, verdict = "seagreen", "Strong"
-elif avg_success >= 55:
+elif avg_success >= 99.0:
     color, verdict = "goldenrod", "Acceptable"
 else:
     color, verdict = "indianred", "Needs Attention"
@@ -161,7 +160,7 @@ For **your own chart** (pick the one you're most unsure about), answer this chec
 | 7. If you printed this in black & white, would it still work? | |
 | 8. What is the honest limitation you would tell them? | |
 
-**The honest limitation** is the sentence that tells your reader you understood your own data. For Version A: "Threshold is arbitrary — set by policy, not by data." For Version C: "This hides the 16 days below 50%."
+**The honest limitation** is the sentence that tells your reader you understood your own data. For Version A: "Threshold is arbitrary — set by policy, not by data." For Version C: "This hides the 4 days below 99%."
 
 ---
 

@@ -134,15 +134,21 @@ In your notes:
 
 ## PART 5 — SAVEFIG: MAKE IT A TURN-IN (10 min)
 
-`plt.show()` puts a chart on a screen; `plt.savefig()` writes it to a file you can submit and keep:
+`plt.show()` puts a chart on a screen; `plt.savefig()` writes it to a file you can submit and keep.
+
+In `first_plot.py`, add this line **just above** the `plt.show()` at the end, so the script saves the chart it just drew:
 
 ```python
 plt.savefig("my_chart.png", dpi=150, bbox_inches="tight")
 ```
 
-(Run it *before* or instead of `show()` in a script — after the window closes, the figure is gone.)
+Save the file and run it again:
 
-Back in the terminal, check it exists:
+```bash
+python3 first_plot.py
+```
+
+Back in the terminal, check the file exists:
 
 ```bash
 ls -lh my_chart.png
